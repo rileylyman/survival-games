@@ -1,13 +1,24 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+int main() {
 
+	const int WIDTH = 800;
+	const int HEIGHT = 800;
 
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Our Game");
+
+	sf::Texture texture;
+	if (!texture.loadFromFile("./textures/wood.png")) {
+		std::cout << "Could not load texture" << std::endl;
+	}
 	
+	sf::Sprite sprite;
+	sprite.setTexture(texture);
+
+	sf::RenderTexture render_texture;
+	if (!render_texture.create(100,100)) { window.close(); }
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -17,19 +28,17 @@ int main()
                 window.close();
         }
 
-		sf::RenderTexture render_texture;
-		if (!render_texture.create(500,500)) { window.close(); }
-
 		render_texture.clear();
-		render_texture.draw(shape);
+		render_texture.draw(sprite);
 		render_texture.display();
 
 		const sf::Texture& texture = render_texture.getTexture();
 
-		sf::Sprite sprite(texture);
 		window.clear();
 		window.draw(sprite);
 		window.display();
+
+		sprite.move(.01f, 0.0f);
 
     }
 
