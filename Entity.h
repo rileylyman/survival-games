@@ -14,7 +14,7 @@ private:
     // TODO: Still need to figure out how to apply components to a Entity
     // std::vector<Component> components;
     sf::Sprite sprite;
-
+	std::string name;
 protected:
     Point position;
 

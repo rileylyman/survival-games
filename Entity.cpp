@@ -10,7 +10,7 @@ Entity::~Entity() {
     // Not filled in 
 }
 
-void Entity::draw(sf::RenderTexture tex) const {
+void Entity::draw(sf::RenderTexture& tex) const {
 	tex.draw(sprite);
 }
 

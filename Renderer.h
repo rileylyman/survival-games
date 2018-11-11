@@ -36,9 +36,9 @@ public:
 		this->window.display();
 	}
 
-	void render(std::vector<Drawable>& ds) {
+	void render(std::vector<Drawable*>& ds) {
 		this->tex.clear();
-		for (Drawable d : ds) { d.draw(tex); }
+		for (Drawable *d : ds) { d->draw(tex); }
 		this->tex.display();
 		
 		const sf::Texture& texture = this->tex.getTexture();

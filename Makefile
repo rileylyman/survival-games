@@ -1,7 +1,9 @@
 CC=g++
-CFLAGS=-c -std=c++11
+CFLAGS=-std=c++11 -I.
 SFML_LIBS=-lsfml-graphics -lsfml-window -lsfml-system
 
+DEPS=*.h
+OBJ=%.o
+
 all: 
-	$(CC) $(CFLAGS) main.cpp
-	$(CC) main.o -o sfml-app $(SFML_LIBS)
+	$(CC) *.cpp $(DEPS) -o sfml-app $(SFML_LIBS)
