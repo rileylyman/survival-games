@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-c
+CFLAGS=-c -std=c++11
 SFML_LIBS=-lsfml-graphics -lsfml-window -lsfml-system
 
 all: 

@@ -9,7 +9,7 @@
 #include "Point.h"
 #include "Renderer.h"
 
-class Entity {
+class Entity : public Drawable {
 private:
     // TODO: Still need to figure out how to apply components to a Entity
     // std::vector<Component> components;
@@ -19,8 +19,10 @@ protected:
     Point position;
 
 public:
-    Entity(std::string name, Point position=Point{0.0, 0.0});
+    Entity(std::string name, sf::Sprite s, Point position=Point{0.0, 0.0});
     virtual ~Entity();
+
+	void draw(sf::RenderTexture& tex) const override;
 
     inline sf::Sprite &getSprite() { return sprite; };
     // inline std::vector<Component> &getComponents() { return components; };

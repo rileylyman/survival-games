@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Renderer.h"
+#include "Entity.h"
 
 int main() {
 
@@ -17,12 +18,9 @@ int main() {
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 	
-	SimpleEntity e(sprite);
+	Entity e("some name", sprite);
 
 	Renderer renderer(window);
-
-	//std::vector<Drawable> toRender;
-	//toRender.push_back((Drawable) e);
 
     while (window.isOpen())
     {

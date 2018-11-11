@@ -1,21 +1,9 @@
 #include <SFML/Graphics.hpp>
-//#include "Component.h"
 #include "Drawable.h"
 #include <iostream>
+
 #ifndef _RENDERER_H_
 #define _RENDERER_H_
-
-class SimpleEntity : public Drawable {
-private:
-	sf::Sprite sprite;
-public:
-	SimpleEntity(sf::Sprite s) : sprite(s) {}
-	~SimpleEntity() {}
-
-	void draw(sf::RenderTexture& tex) const override {
-		tex.draw(this->sprite);
-	}
-};
 
 class Renderer {
 

@@ -24,12 +24,12 @@ namespace Component {
     public: 
         virtual void death();
         virtual void takeDamage();
-    }
+    };
 
     class Aggressive : Component {
     public:
         virtual void attack();
-    }
+    };
     
 }
 #endif
