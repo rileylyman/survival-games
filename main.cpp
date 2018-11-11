@@ -6,13 +6,13 @@ int main() {
 	const int WIDTH = 800;
 	const int HEIGHT = 800;
 
-    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Our Game");
+  sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Our Game");
 
 	sf::Texture texture;
 	if (!texture.loadFromFile("./textures/wood.png")) {
 		std::cout << "Could not load texture" << std::endl;
 	}
-	
+
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 
