@@ -49,7 +49,6 @@ public:
 		this->window.display();
 	}
 
-//	inline void setTexture(sf::RenderTexture rt) { this->tex = rt; }
 	inline void setClearColor(sf::Color color) { this->clearColor = color; }
 
 };
