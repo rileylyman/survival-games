@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Renderer.h"
 
 int main() {
 
@@ -15,9 +16,13 @@ int main() {
 	
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
+	
+	SimpleEntity e(sprite);
 
-	sf::RenderTexture render_texture;
-	if (!render_texture.create(100,100)) { window.close(); }
+	Renderer renderer(window);
+
+	//std::vector<Drawable> toRender;
+	//toRender.push_back((Drawable) e);
 
     while (window.isOpen())
     {
@@ -28,15 +33,7 @@ int main() {
                 window.close();
         }
 
-		render_texture.clear();
-		render_texture.draw(sprite);
-		render_texture.display();
-
-		const sf::Texture& texture = render_texture.getTexture();
-
-		window.clear();
-		window.draw(sprite);
-		window.display();
+		renderer.render(e);
 
 		sprite.move(.01f, 0.0f);
 
